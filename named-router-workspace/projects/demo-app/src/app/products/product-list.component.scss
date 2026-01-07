@@ -1,0 +1,35 @@
+.page {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid #e6e9f2;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e6e9f2;
+  background: #f8f9fc;
+}
+
+.muted {
+  color: #5b6472;
+  font-size: 0.9rem;
+}
+
+.link {
+  text-decoration: none;
+  font-weight: 600;
+  color: #1b2c64;
+}

@@ -1,0 +1,9 @@
+<section class="page">
+  <h1>Product detail</h1>
+  <p>Showing product id: {{ productId() || 'Missing' }}</p>
+
+  <div class="actions">
+    <a class="link" [namedRouterLink]="'product-list'">Back to products</a>
+    <a class="link" [namedRouterLink]="'home'">Back home</a>
+  </div>
+</section>

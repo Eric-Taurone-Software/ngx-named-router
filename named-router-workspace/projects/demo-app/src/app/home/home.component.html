@@ -1,0 +1,152 @@
+<section class="hero">
+  <h1>Named routes in action</h1>
+  <p>
+    This demo shows how to use the directive and services from ngx-named-router to navigate
+    with route names instead of paths.
+  </p>
+</section>
+
+<section class="panel">
+  <h2>Directive examples</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Basic links</h3>
+      <a class="link" [namedRouterLink]="'docs'">Docs overview</a>
+      <a class="link" [namedRouterLink]="'user-detail'" [routeParams]="{ id: userId() }">
+        User detail (id={{ userId() }})
+      </a>
+      <a class="link" [namedRouterLink]="'optional-user'">Optional param (no id)</a>
+    </div>
+
+    <div class="card">
+      <h3>Params, query, fragment</h3>
+      <a
+        class="link"
+        [namedRouterLink]="'search'"
+        [routeParams]="{ query: searchQuery() }"
+        [queryParams]="{ page: 2, tag: ['router', 'demo'] }"
+      >
+        Search with query params
+      </a>
+      <a class="link" [namedRouterLink]="'docs'" [fragment]="'installation'">
+        Docs installation section
+      </a>
+      <a class="link" [namedRouterLink]="'user-settings'" [routeParams]="{ id: userId() }" [preserveFragment]="true">
+        User settings (preserve fragment)
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Navigation extras</h3>
+      <a class="link" [namedRouterLink]="'optional-user'" [routeParams]="{ id: 99 }" [skipLocationChange]="true">
+        Optional user with skipLocationChange
+      </a>
+      <a class="link" [namedRouterLink]="'user-settings'" [routeParams]="{ id: userId() }" [replaceUrl]="true">
+        User settings with replaceUrl
+      </a>
+      <a class="link" [namedRouterLink]="'user-detail'" [routeParams]="{ id: userId() }" target="_blank">
+        User detail in new tab
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Constraint params</h3>
+      <label class="field">
+        <span>Numeric user id</span>
+        <input
+          type="text"
+          [value]="constraintId()"
+          (input)="constraintId.set(($any($event.target).value || '').trim())"
+          placeholder="e.g. 7"
+        />
+      </label>
+      <a class="link" [namedRouterLink]="'user-by-id'" [routeParams]="{ id: constraintId() }">
+        Go to constrained route
+      </a>
+      <p class="hint">Non-numeric values will fall through to the not found page.</p>
+    </div>
+  </div>
+</section>
+
+<section class="panel">
+  <h2>Service examples</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Programmatic navigation</h3>
+      <label class="field">
+        <span>User id</span>
+        <input
+          type="text"
+          [value]="userId()"
+          (input)="userId.set(($any($event.target).value || '').trim())"
+        />
+      </label>
+      <label class="field">
+        <span>Search query</span>
+        <input
+          type="text"
+          [value]="searchQuery()"
+          (input)="searchQuery.set(($any($event.target).value || '').trim())"
+        />
+      </label>
+      <div class="button-row">
+        <button type="button" (click)="goToUser()">Go to user detail</button>
+        <button type="button" (click)="goToSettings()">Go to settings (replace URL)</button>
+        <button type="button" (click)="goToSearch()">Go to search</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>URL generation</h3>
+      <p>Generate URLs without navigating:</p>
+      <button type="button" (click)="previewUrls()">Generate URL previews</button>
+      <div class="code-block">
+        <div><strong>UrlTree:</strong> {{ urlTreePreview() || 'Click to generate' }}</div>
+        <div><strong>Serialized:</strong> {{ urlPreview() || 'Click to generate' }}</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Registry actions</h3>
+      <label class="field">
+        <span>Route name to check</span>
+        <input
+          type="text"
+          [value]="routeCheckName()"
+          (input)="routeCheckName.set(($any($event.target).value || '').trim())"
+        />
+      </label>
+      <div class="button-row">
+        <button type="button" (click)="checkRoute()">Check route</button>
+        <button type="button" (click)="refreshRegistry()" [disabled]="isRefreshing()">
+          Refresh registry
+        </button>
+      </div>
+      <p>
+        <strong>Exists:</strong>
+        {{ routeExists() === null ? 'Unknown' : (routeExists() ? 'Yes' : 'No') }}
+      </p>
+      <p>
+        <strong>Routes:</strong>
+        {{ routeNames().length ? routeNames().join(', ') : 'No routes loaded yet.' }}
+      </p>
+      @if (isRefreshing()) {
+        <p class="status">Refreshing route registry...</p>
+      }
+    </div>
+
+    <div class="card">
+      <h3>Error handling</h3>
+      <p>Trigger a failed navigation to see the error message:</p>
+      <button type="button" (click)="goToBroken()">Navigate to missing route</button>
+    </div>
+  </div>
+
+  @if (lastNavigation()) {
+    <p class="status success">{{ lastNavigation() }}</p>
+  }
+
+  @if (lastError()) {
+    <p class="status error">{{ lastError() }}</p>
+  }
+</section>

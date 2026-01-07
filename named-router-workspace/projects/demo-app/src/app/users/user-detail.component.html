@@ -1,0 +1,22 @@
+<section class="page">
+  <h1>User detail</h1>
+  <dl>
+    <div>
+      <dt>User id</dt>
+      <dd>{{ userId() || 'Missing' }}</dd>
+    </div>
+    <div>
+      <dt>Tab</dt>
+      <dd>{{ tab() || 'None' }}</dd>
+    </div>
+    <div>
+      <dt>Source</dt>
+      <dd>{{ source() || 'None' }}</dd>
+    </div>
+  </dl>
+
+  <div class="actions">
+    <a class="link" [namedRouterLink]="'user-settings'" [routeParams]="{ id: userId() }">Go to settings</a>
+    <a class="link" [namedRouterLink]="'home'">Back home</a>
+  </div>
+</section>

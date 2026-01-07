@@ -1,0 +1,110 @@
+.hero {
+  margin-bottom: 2rem;
+}
+
+.panel {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(14, 22, 44, 0.08);
+  margin-bottom: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.card {
+  background: #f8f9fc;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  border: 1px solid #e6e9f2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: 0.5rem;
+  background: #ffffff;
+  border: 1px solid #d9dff1;
+  text-decoration: none;
+  color: #1b2c64;
+  font-weight: 600;
+}
+
+.link:hover {
+  border-color: #9bb1ff;
+  background: #eef1ff;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.field input {
+  padding: 0.45rem 0.6rem;
+  border-radius: 0.5rem;
+  border: 1px solid #cdd4e4;
+  background: #ffffff;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+button {
+  padding: 0.45rem 0.8rem;
+  border-radius: 0.5rem;
+  border: none;
+  background: #1b2c64;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.hint {
+  font-size: 0.85rem;
+  color: #5b6472;
+}
+
+.code-block {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.85rem;
+  background: #ffffff;
+  border: 1px dashed #c8d0e6;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.status {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+}
+
+.status.success {
+  background: #e5f7e9;
+  color: #1b5e20;
+}
+
+.status.error {
+  background: #ffe6e6;
+  color: #8b1a1a;
+}

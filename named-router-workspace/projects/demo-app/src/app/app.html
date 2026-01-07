@@ -1,0 +1,20 @@
+<div class="app-shell">
+  <header class="app-header">
+    <div class="brand">{{ appTitle }}</div>
+    <nav class="primary-nav" aria-label="Primary">
+      <a class="nav-link" [namedRouterLink]="'home'">Home</a>
+      <a class="nav-link" [namedRouterLink]="'docs'">Docs</a>
+      <a class="nav-link" [namedRouterLink]="'user-detail'" [routeParams]="{ id: 42 }">User 42</a>
+      <a class="nav-link" [namedRouterLink]="'search'" [routeParams]="{ query: 'router' }">Search</a>
+      <a class="nav-link" [namedRouterLink]="'products'">Products</a>
+    </nav>
+  </header>
+
+  <main class="app-main">
+    <router-outlet />
+  </main>
+
+  <footer class="app-footer">
+    <span>Named routes demo app</span>
+  </footer>
+</div>

@@ -1,0 +1,9 @@
+<section class="page">
+  <h1>User settings</h1>
+  <p>Settings for user id: {{ userId() || 'Missing' }}</p>
+
+  <div class="actions">
+    <a class="link" [namedRouterLink]="'user-detail'" [routeParams]="{ id: userId() }">Back to detail</a>
+    <a class="link" [namedRouterLink]="'home'">Back home</a>
+  </div>
+</section>
