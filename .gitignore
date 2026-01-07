@@ -1,23 +1,20 @@
-# Angular specific
-/dist/
-/out-tsc/
-/tmp/
-/coverage/
-/e2e/test-output/
-/.angular/
-.angular/
-
-# Node modules and dependency files
+# Node / dependencies
 /node_modules/
 /package-lock.json
 /yarn.lock
 
 # Environment files
-/.env
+.env
 
-# Angular CLI and build artefacts
-/.angular-cli.json
-/.ng/
+# Angular specific / build artifacts
+.angular/
+.angular/cache/
+.angular-cli.json
+.ng/
+/dist/
+/out-tsc/
+/tmp/
+/e2e/test-output/
 
 # TypeScript cache
 *.tsbuildinfo
@@ -26,4 +23,34 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-/ngx-named-router.iml
+testem.log
+/libpeerconnection.log
+
+# IDEs and editors
+.idea/
+*.iml
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Visual Studio Code - ignore everything but keep useful workspace files
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/
+
+# Miscellaneous
+.sass-cache/
+/connect.lock
+/coverage/
+/typings
+__screenshots__/
+
+# System files
+.DS_Store
+Thumbs.db
