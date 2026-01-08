@@ -1,9 +1,34 @@
 {
   "name": "ngx-named-router",
   "version": "0.0.1",
+  "description": "A powerful Angular library that brings named route navigation to your Angular applications",
+  "author": "Eric Taurone",
+  "license": "MIT",
+  "homepage": "https://github.com/Eric-Taurone-Software/ngx-named-router#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Eric-Taurone-Software/ngx-named-router.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Eric-Taurone-Software/ngx-named-router/issues"
+  },
+  "keywords": [
+    "angular",
+    "router",
+    "routing",
+    "named-routes",
+    "named",
+    "navigation",
+    "link",
+    "routerLink",
+    "semantic-routing",
+    "angular-router",
+    "typescript"
+  ],
   "peerDependencies": {
-    "@angular/common": "^21.0.0",
-    "@angular/core": "^21.0.0"
+    "@angular/common": "^20.0.0 || ^21.0.0",
+    "@angular/core": "^20.0.0 || ^21.0.0",
+    "@angular/router": "^20.0.0 || ^21.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"

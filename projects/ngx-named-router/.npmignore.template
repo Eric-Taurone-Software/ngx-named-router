@@ -1,0 +1,44 @@
+# NPM Ignore File for ngx-named-router
+# Note: ng-packagr automatically handles most exclusions
+# This file is here as a reference if needed
+
+# Source files (ng-packagr only publishes compiled output)
+src/
+*.ts
+!*.d.ts
+
+# Build configuration
+tsconfig.*.json
+ng-package.json
+.angular/
+
+# Tests
+*.spec.ts
+*.spec.js
+karma.conf.js
+vitest.config.ts
+
+# Development files
+.editorconfig
+.gitignore
+.vscode/
+
+# Documentation (workspace-level, not library-level)
+# Keep README.md in library folder - it will be published
+# Root README.md is NOT published
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# IDE
+.idea/
+*.iml
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+

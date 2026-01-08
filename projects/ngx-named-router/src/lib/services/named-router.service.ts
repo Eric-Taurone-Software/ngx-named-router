@@ -65,7 +65,7 @@ export class NamedRouterService {
     }
 
     try {
-      const urlTree = this.createUrlTree(pathPattern, extras);
+      const urlTree = this.createUrlTreeFromPattern(pathPattern, extras);
       return await this.router.navigateByUrl(urlTree, this.extractNavigationExtras(extras));
     } catch (error) {
       throw new Error(
