@@ -15,7 +15,8 @@
     "build:demo": "ng build demo-app",
     "watch": "ng build --watch --configuration development",
     "watch:lib": "ng build nx-named-router --watch",
-    "test": "ng test"
+    "test": "ng test",
+    "publish:lib": "ng build ngx-named-router && cd dist/ngx-named-router && npm publish --access public"
   },
   "prettier": {
     "printWidth": 100,
